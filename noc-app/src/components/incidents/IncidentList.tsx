@@ -22,6 +22,7 @@ import {
   MenuItem,
   CircularProgress,
   Alert,
+  Grid,
 } from '@mui/material';
 import {
   Add as AddIcon,
@@ -407,31 +408,3 @@ const IncidentList: React.FC = () => {
 };
 
 export default IncidentList;
-
-// Helper component for the grid layout
-const Grid = {
-  container: ({ children, spacing, alignItems }: any) => (
-    <Box sx={{ 
-      display: 'flex', 
-      flexWrap: 'wrap', 
-      margin: -spacing/2,
-      alignItems: alignItems || 'flex-start'
-    }}>
-      {children}
-    </Box>
-  ),
-  item: ({ children, xs, sm, md, sx }: any) => (
-    <Box sx={{ 
-      padding: 1,
-      width: {
-        xs: xs === 12 ? '100%' : `${(xs / 12) * 100}%`,
-        sm: sm && `${(sm / 12) * 100}%`,
-        md: md && `${(md / 12) * 100}%`,
-      },
-      ...sx
-    }}>
-      {children}
-    </Box>
-  )
-};
-
